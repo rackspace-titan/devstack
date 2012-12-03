@@ -1,0 +1,61 @@
+## Notes:
+# this devstack enables swift, keeps the IP configuration as per the lab setup
+# just need to run the install_os_domU.sh script
+
+MYSQL_PASSWORD=my_super_secret
+SERVICE_TOKEN=my_super_secret
+ADMIN_PASSWORD=my_super_secret
+SERVICE_PASSWORD=my_super_secret
+RABBIT_PASSWORD=my_super_secret
+
+# CHANGED
+SWIFT_HASH=66a3d6b56c1f479c8b4e70ab5c2000f5
+# CHANGED
+SWIFT_REPLICAS=1
+# CHANGED
+SWIFT_DATA_DIR=/opt/stack/data
+
+# This is the password for your guest (for both stack and root users)
+GUEST_PASSWORD=my_super_secret
+
+## TODO: (NEEDS CHANGE)
+# IMPORTANT: The following must be set to your dom0 root password!
+XENAPI_PASSWORD=<xen_server_passwd>
+
+# Do not download the usual images yet!
+IMAGE_URLS=""
+
+# Explicitly set virt driver here
+VIRT_DRIVER=xenserver
+
+# Explicitly set multi-host
+MULTI_HOST=1
+
+# Give extra time for boot
+ACTIVE_TIMEOUT=45
+
+# CHANGED
+# Interface on which you would like to access services
+HOST_IP_IFACE=eth3
+
+# First time Ubuntu network install params
+NETINSTALLIP="dhcp"
+NAMESERVERS=""
+NETMASK=""
+GATEWAY=""
+
+# This entire block is CHANGED
+PUB_IP=dhcp
+VM_IP=192.168.0.255
+FIXED_RANGE=192.168.0.0/24
+LOGFILE=/tmp/stack.log
+
+# Please leave this commented out
+#FLOATING_RANGE=w.x.y.z/aa
+#PUB_IP=w.x.y.z
+#PUB_NETMASK=
+#PUB_GATEWAY=
+#FIXED_RANGE=a.b.c.d/e
+#HOST_IP=dhcp
+#enable the Swift service
+# enable_service swift

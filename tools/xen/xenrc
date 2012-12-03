@@ -6,7 +6,7 @@
 #
 
 # Name of this guest
-GUEST_NAME=${GUEST_NAME:-DevStackOSDomU}
+GUEST_NAME=${GUEST_NAME:-myDomU}
 
 # Size of image
 VDI_MB=${VDI_MB:-5000}
